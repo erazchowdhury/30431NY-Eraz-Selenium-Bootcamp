@@ -45,6 +45,11 @@ public class BasePage {
     public static ExtentReports extent;
     public static JavascriptExecutor jsDriver;
 
+    public BasePage() {
+        dataInit();
+        databaseInit();
+    }
+
     // region Hooks
     @BeforeSuite(alwaysRun = true)
     public void reportSetup(ITestContext context) {
@@ -61,7 +66,6 @@ public class BasePage {
         ExtentTestManager.getTest().assignCategory(className);
     }
 
-    @BeforeMethod(alwaysRun = true)
     public void databaseInit() {
         String host = dbConfig.get(BaseConfig.DBProperties.HOST);
         String user = dbConfig.get(BaseConfig.DBProperties.USER);
@@ -71,7 +75,6 @@ public class BasePage {
         db = new Database(host, user, password, className);
     }
 
-    @BeforeMethod(alwaysRun = true)
     public void dataInit() {
         excel = new ExcelData(DATA_PATH);
     }

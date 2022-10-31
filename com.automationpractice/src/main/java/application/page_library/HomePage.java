@@ -1,24 +1,28 @@
 package application.page_library;
 
 import application.shared.SharedStepsUI;
-import base.BasePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class HomePage extends SharedStepsUI {
 
-    @FindBy(xpath = "//ul[@id='homefeatured']//a[@title='Faded Short Sleeve T-shirts' and @class='product-name']")
-    public WebElement fadedShortSleeveTShirtProductLink;
+    @FindBy(xpath = "//ul[@id='homefeatured']//a[@class='product-name']")
+    public List<WebElement> featuredProducts;
 
     public HomePage() {
         PageFactory.initElements(driver, this);
     }
 
-    public void clickFadedShortSleeveTShirtProductLink() {
-        clickOnElement(fadedShortSleeveTShirtProductLink);
-
-//        return new FadedShortSleeveTShirtPage();
+    public ItemPage clickFeaturedProduct(int productIndex) {
+        try {
+            clickOnElement(featuredProducts.get(productIndex));
+        } catch (IndexOutOfBoundsException e) {
+            clickOnElement(featuredProducts.get(featuredProducts.size() - 1));
+        }
+        return new ItemPage();
     }
 
 }
