@@ -1,5 +1,6 @@
 package application.shared.ui;
 
+import application.page_library.ContactPage;
 import base.BasePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -32,11 +33,11 @@ public class SystemBar extends BasePage {
 //        return new SignInPage();
 //    }
 //
-//    public ContactUsPage clickContactUsButton() {
-//        clickElement(contactUsButton);
-//
-//        return new ContactUsPage();
-//    }
+    public ContactPage clickContactUsButton() {
+        clickOnElement(contactUsButton);
+
+        return new ContactPage();
+    }
 //
 //    public ShoppingCartPage clickShoppingCartButton() {
 //        clickElement(shoppingCartButton);

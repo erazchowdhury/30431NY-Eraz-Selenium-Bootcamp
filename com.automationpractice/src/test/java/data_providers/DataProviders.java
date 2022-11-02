@@ -12,4 +12,9 @@ public class DataProviders extends BasePage {
         return excel.readStringArrays("TestFeaturedProductsDP");
     }
 
+    @DataProvider (name = "testSendingMessageOnContactPage")
+    public Object[][] getDataSendingMessageOnContactPage() {
+        return excel.readStringArrays("TestSendingMessageDP");
+    }
+
 }
