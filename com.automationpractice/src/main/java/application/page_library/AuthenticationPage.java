@@ -24,13 +24,13 @@ public class AuthenticationPage extends SharedStepsUI {
 
     }
 
-//    public ForgotYourPasswordPage clickForgotPasswordLink() {
-//
-//        clickOnElement(forgotPasswordLink);
-//
-//        return new ForgotYourPasswordPage();
-//
-//    }
+    public ForgotYourPasswordPage clickForgotPasswordLink() {
+
+        clickOnElement(forgotPasswordLink);
+
+        return new ForgotYourPasswordPage();
+
+    }
 
     public void inputEmail(String emailAddress) {
 

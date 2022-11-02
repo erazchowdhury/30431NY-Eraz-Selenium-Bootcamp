@@ -1,5 +1,6 @@
 package application.shared.ui;
 
+import application.page_library.AuthenticationPage;
 import application.page_library.ContactPage;
 import base.BasePage;
 import org.openqa.selenium.WebElement;
@@ -27,12 +28,12 @@ public class SystemBar extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
-//    public SignInPage clickSignInButton() {
-//        clickElement(signInButton);
-//
-//        return new SignInPage();
-//    }
-//
+    public AuthenticationPage clickSignInButton() {
+        clickOnElement(signInButton);
+
+        return new AuthenticationPage();
+    }
+
     public ContactPage clickContactUsButton() {
         clickOnElement(contactUsButton);
 

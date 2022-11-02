@@ -17,4 +17,9 @@ public class DataProviders extends BasePage {
         return excel.readStringArrays("TestSendingMessageDP");
     }
 
+    @DataProvider (name = "testResetPassword")
+    public Object[][] getDataTestResetPassword() {
+        return excel.readStringArrays("TestResetPasswordDP");
+    }
+
 }

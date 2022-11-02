@@ -3,16 +3,19 @@ Click on item link
 Click "Add to cart" button
 Click "Proceed to checkout" button
 Click "Proceed to checkout" button
+Enter valid email address
+Enter valid password
+Click Sign In Button
 Click "Proceed to checkout" button
 Click "terms of service" checkbox
 Click "Pay by bank wire" button
 Click "I confirm my order" button
 
 2. Send message through Contact Us
-Navigate to URL
 Click on Contact Us link
 Select a heading from Subject Heading dropdown
 Enter an email address
+Upload picture
 Type in a message
 Click Send Button
 
@@ -22,3 +25,11 @@ Click on Sign In Button
 Click "Forgot your password?" link
 Input email address
 Click "Retrieve Password" button
+
+4.Sign into account and view order
+Click on Sign In Button
+Enter valid email
+Enter valid password
+Click Sign In Button
+Click Order History and Details
+Click on PDF button
