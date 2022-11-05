@@ -2,6 +2,7 @@ package application.shared.ui;
 
 import application.page_library.AuthenticationPage;
 import application.page_library.ContactPage;
+import application.page_library.ProductsPage;
 import base.BasePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -46,20 +47,20 @@ public class SystemBar extends BasePage {
 //        return new ShoppingCartPage();
 //    }
 //
-//    public void inputSearchTerm(String searchTerm) {
-//        sendKeysToElement(searchBar, searchTerm);
-//    }
-//
-//    public void clickSearchSubmitButton() {
-//        clickElement(searchSubmitButton);
-//    }
-//
-//    public ProductsPage doSearch(String searchTerm) {
-//        inputSearchTerm(searchTerm);
-//        clickSearchSubmitButton();
-//
-//        return new ProductsPage();
-//    }
+    public void inputSearchTerm(String searchTerm) {
+        sendKeysToElement(searchBar, searchTerm);
+    }
+
+    public void clickSearchSubmitButton() {
+        clickOnElement(searchSubmitButton);
+    }
+
+    public ProductsPage doSearch(String searchTerm) {
+        inputSearchTerm(searchTerm);
+        clickSearchSubmitButton();
+
+        return new ProductsPage();
+    }
 
 
 

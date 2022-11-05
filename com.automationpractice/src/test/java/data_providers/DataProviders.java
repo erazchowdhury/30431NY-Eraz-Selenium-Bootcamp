@@ -32,4 +32,9 @@ public class DataProviders extends BasePage {
         return excel.readStringArrays("TestSignInDP");
     }
 
+    @DataProvider (name = "testSearchAndPurchase")
+    public Object[][] getDataTestSearchAndPurchase() {
+        return excel.readStringArrays("TestSearchAndPurchaseDP");
+    }
+
 }
