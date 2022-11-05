@@ -60,4 +60,14 @@ public class AuthenticationPage extends SharedStepsUI {
 
     }
 
+    public AccountPage signIntoAccount(String emailAddress, String password) {
+
+        inputEmail(emailAddress);
+        inputPassword(password);
+        clickSignInButton();
+
+        return new AccountPage();
+
+    }
+
 }

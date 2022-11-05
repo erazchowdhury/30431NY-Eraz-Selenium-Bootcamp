@@ -22,4 +22,9 @@ public class DataProviders extends BasePage {
         return excel.readStringArrays("TestResetPasswordDP");
     }
 
+    @DataProvider (name = "testViewOrder")
+    public Object[][] getDataTestViewOrder() {
+        return excel.readStringArrays("TestViewOrderDP");
+    }
+
 }
