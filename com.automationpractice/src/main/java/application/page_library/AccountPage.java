@@ -10,6 +10,9 @@ public class AccountPage extends SharedStepsUI {
     @FindBy (xpath = "//a[@title='Orders']")
     public WebElement orderHistoryButton;
 
+    @FindBy (xpath = "//p[@class='info-account']")
+    public WebElement welcomeMessage;
+
     public AccountPage() {
 
         PageFactory.initElements(driver, this);
@@ -21,6 +24,12 @@ public class AccountPage extends SharedStepsUI {
         clickOnElement(orderHistoryButton);
 
         return new OrderHistoryPage();
+
+    }
+
+    public String getTextFromMessage() {
+
+        return getTrimmedElementText(welcomeMessage);
 
     }
 

@@ -27,4 +27,9 @@ public class DataProviders extends BasePage {
         return excel.readStringArrays("TestViewOrderDP");
     }
 
+    @DataProvider (name = "testSignIn")
+    public Object[][] getDataTestSignIn() {
+        return excel.readStringArrays("TestSignInDP");
+    }
+
 }
