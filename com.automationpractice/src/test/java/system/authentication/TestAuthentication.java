@@ -53,5 +53,18 @@ public class TestAuthentication extends BasePage {
 
     }
 
+    @Test (groups = {"smoke", "authentication"}, dataProviderClass = data_providers.DataProviders.class, dataProvider = "testInvalidSignIn")
+    public void testInvalidSignIn(String emailAddress, String password, String expected) {
+
+        HomePage homePage = new HomePage();
+
+        AuthenticationPage authenticationPage = homePage.systemBar.clickSignInButton();
+
+        authenticationPage.signIntoAccount(emailAddress, password);
+
+        Assert.assertEquals(authenticationPage.getAuthenticationFailMessage(), expected);
+
+    }
+
 
 }

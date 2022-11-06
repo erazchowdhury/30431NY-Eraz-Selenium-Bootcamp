@@ -42,4 +42,9 @@ public class DataProviders extends BasePage {
         return excel.readStringArrays("TestRemoveItems");
     }
 
+    @DataProvider (name = "testInvalidSignIn")
+    public Object[][] getDataTestInvalidSignIn() {
+        return excel.readStringArrays("TestInvalidSignInDP");
+    }
+
 }

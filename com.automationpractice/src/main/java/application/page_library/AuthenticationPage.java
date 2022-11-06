@@ -18,6 +18,9 @@ public class AuthenticationPage extends SharedStepsUI {
     @FindBy (id = "SubmitLogin")
     public WebElement submitButton;
 
+    @FindBy (xpath = "//div[@class='alert alert-danger']/p")
+    public WebElement authenticationFailMessage;
+
     public AuthenticationPage() {
 
         PageFactory.initElements(driver, this);
@@ -67,6 +70,12 @@ public class AuthenticationPage extends SharedStepsUI {
         clickSignInButton();
 
         return new AccountPage();
+
+    }
+
+    public String getAuthenticationFailMessage() {
+
+        return getTrimmedElementText(authenticationFailMessage);
 
     }
 
