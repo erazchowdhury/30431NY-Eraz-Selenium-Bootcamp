@@ -25,6 +25,13 @@ public class SystemBar extends BasePage {
     @FindBy (xpath = "//button[@name='submit_search']")
     public WebElement searchSubmitButton;
 
+    @FindBy (id = "newsletter-input")
+    public WebElement newsletterInputField;
+
+    @FindBy (name = "submitNewsletter")
+    public WebElement newsletterSubmitButton;
+
+
     public SystemBar() {
         PageFactory.initElements(driver, this);
     }
@@ -62,6 +69,25 @@ public class SystemBar extends BasePage {
         return new ProductsPage();
     }
 
+
+    public void inputEmail(String email) {
+
+        sendKeysToElement(newsletterInputField, email);
+
+    }
+
+    public void clickNewsletterSubmitButton() {
+
+        clickOnElement(newsletterSubmitButton);
+
+    }
+
+    public void subscribeToNewsLetter(String email) {
+
+        inputEmail(email);
+        clickNewsletterSubmitButton();
+
+    }
 
 
 }

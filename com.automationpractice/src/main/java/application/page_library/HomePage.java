@@ -12,6 +12,9 @@ public class HomePage extends SharedStepsUI {
     @FindBy(xpath = "//ul[@id='homefeatured']//a[@class='product-name']")
     public List<WebElement> featuredProducts;
 
+    @FindBy(xpath = "//p[@class='alert alert-success']")
+    public WebElement newsletterConfirmation;
+
     public HomePage() {
         PageFactory.initElements(driver, this);
     }

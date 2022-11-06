@@ -16,9 +16,9 @@
             </run>
         </groups>
         <classes>
+            <class name="system.authentication.TestAuthentication"/>
             <class name="system.purchasing.TestPurchasing"/>
             <class name="system.contact.TestContact"/>
-            <class name="system.authentication.TestAuthentication"/>
             <class name="system.shopping_cart.TestShoppingCart"/>
         </classes>
     </test>

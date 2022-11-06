@@ -4,6 +4,7 @@ import application.page_library.*;
 import base.BasePage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import utils.GenerateData;
 
 public class TestContact extends BasePage {
 
@@ -36,6 +37,20 @@ public class TestContact extends BasePage {
         itemPage.writeReview(Integer.parseInt(rating), title, comment);
 
         Assert.assertTrue(isElementVisible(itemPage.confirmationWindow));
+    }
+
+    @Test(groups = {"contact", "smoke"})
+    public void testNewsletterSignUp() {
+
+        HomePage homePage = new HomePage();
+
+        GenerateData faker = new GenerateData();
+        String email = faker.email();
+
+        homePage.systemBar.subscribeToNewsLetter(email);
+
+        Assert.assertTrue(isElementVisible(homePage.newsletterConfirmation));
+
     }
 
 }
