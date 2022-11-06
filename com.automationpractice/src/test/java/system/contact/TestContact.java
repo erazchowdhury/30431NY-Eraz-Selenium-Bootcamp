@@ -1,7 +1,6 @@
 package system.contact;
 
-import application.page_library.ContactPage;
-import application.page_library.HomePage;
+import application.page_library.*;
 import base.BasePage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -18,6 +17,25 @@ public class TestContact extends BasePage {
 
         Assert.assertEquals(contactPage.getConfirmationMessage(), expected);
 
+    }
+
+    @Test(groups = {"contact", "smoke"}, dataProviderClass = data_providers.DataProviders.class, dataProvider = "testWritingReview")
+    public void testWritingReview(String emailAddress, String password, String searchTerm, String productIndex,
+                                  String rating, String title, String comment) {
+
+        HomePage homePage = new HomePage();
+
+        AuthenticationPage authenticationPage = homePage.systemBar.clickSignInButton();
+
+        AccountPage accountPage = authenticationPage.signIntoAccount(emailAddress, password);
+
+        ProductsPage productsPage = accountPage.systemBar.doSearch(searchTerm);
+
+        ItemPage itemPage = productsPage.selectProduct(Integer.parseInt(productIndex));
+
+        itemPage.writeReview(Integer.parseInt(rating), title, comment);
+
+        Assert.assertTrue(isElementVisible(itemPage.confirmationWindow));
     }
 
 }
