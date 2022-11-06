@@ -8,6 +8,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import listeners.DriverEventListener;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.io.FileHandler;
@@ -18,6 +19,7 @@ import org.openqa.selenium.support.ui.*;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
+import org.testng.annotations.Optional;
 import reporting.ExtentManager;
 import reporting.ExtentTestManager;
 import utils.Database;
@@ -26,10 +28,7 @@ import utils.ExcelData;
 import java.io.File;
 import java.lang.reflect.Method;
 import java.time.Duration;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class BasePage {
 
@@ -44,6 +43,11 @@ public class BasePage {
     public static Wait<WebDriver> fluentWait;
     public static ExtentReports extent;
     public static JavascriptExecutor jsDriver;
+
+    public BasePage() {
+        dataInit();
+        databaseInit();
+    }
 
     // region Hooks
     @BeforeSuite(alwaysRun = true)
@@ -61,7 +65,6 @@ public class BasePage {
         ExtentTestManager.getTest().assignCategory(className);
     }
 
-    @BeforeMethod(alwaysRun = true)
     public void databaseInit() {
         String host = dbConfig.get(BaseConfig.DBProperties.HOST);
         String user = dbConfig.get(BaseConfig.DBProperties.USER);
@@ -71,14 +74,13 @@ public class BasePage {
         db = new Database(host, user, password, className);
     }
 
-    @BeforeMethod(alwaysRun = true)
     public void dataInit() {
         excel = new ExcelData(DATA_PATH);
     }
 
     @Parameters({"driverConfigEnabled", "browser", "url"})
-    @BeforeMethod
-    public void driverSetup(@Optional("true") String driverConfigEnabled, @Optional("chrome") String browser, @Optional("http://mbusa.com") String url) {
+    @BeforeMethod (alwaysRun = true)
+    public void driverSetup(@Optional("true") String driverConfigEnabled, @Optional("chrome") String browser, @Optional("http://automationpractice.com") String url) {
         if (Boolean.parseBoolean(driverConfigEnabled)) {
             driverInit(browser);
             driver.get(url);
@@ -88,7 +90,7 @@ public class BasePage {
     }
 
     @Parameters({"driverConfigEnabled"})
-    @AfterMethod
+    @AfterMethod (alwaysRun = true)
     public void cleanUp(@Optional("true") String driverConfigEnabled) {
         if (Boolean.parseBoolean(driverConfigEnabled)) {
             driver.close();
@@ -211,6 +213,16 @@ public class BasePage {
         select.selectByValue(value);
     }
 
+    public void clickOnElementFromList(List<WebElement> elements, int index) {
+
+        try {
+            clickOnElement(elements.get(index));
+        } catch (IndexOutOfBoundsException e) {
+            clickOnElement(elements.get(elements.size() - 1));
+        }
+
+    }
+
     public boolean isElementVisible(WebElement element) {
         try {
             fluentWait.until(ExpectedConditions.visibilityOf(element));
@@ -218,6 +230,20 @@ public class BasePage {
             return false;
         }
         return true;
+    }
+
+    public boolean isFileDownloaded(String downloadPath, String fileName) {
+        File dir = new File(downloadPath);
+        File[] dirContents = dir.listFiles();
+
+        for (int i = 0; i < dirContents.length; i++) {
+            if (dirContents[i].getName().equals(fileName)) {
+                // File has been found, it can now be deleted:
+                dirContents[i].delete();
+                return true;
+            }
+        }
+        return false;
     }
 
     public void switchToParentFrame() {
@@ -288,7 +314,18 @@ public class BasePage {
     private static void driverInit(String browser) {
         if (browser.equalsIgnoreCase("chrome")) {
             WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver();
+
+            String fileDownloadPath = "C:" + File.separator + "Users" + File.separator + "jadeh" + File.separator + "Downloads";
+            Map<String, Object> prefsMap = new HashMap<String, Object>();
+            prefsMap.put("profile.default_content_settings.popups", 0);
+            prefsMap.put("download.default_directory", fileDownloadPath);
+
+            ChromeOptions option = new ChromeOptions();
+            option.setExperimentalOption("prefs", prefsMap);
+            option.addArguments("--test-type");
+            option.addArguments("--disable-extensions");
+
+            driver = new ChromeDriver(option);
         } else if (browser.equalsIgnoreCase("firefox")) {
             WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();

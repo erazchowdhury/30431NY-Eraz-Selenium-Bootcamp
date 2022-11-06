@@ -9,4 +9,18 @@
     <parameter name="browser" value="chrome"/>
     <parameter name="url" value="http://automationpractice.com"/>
 
+    <test name="Smoke">
+        <groups>
+            <run>
+                <include name="smoke"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="system.authentication.TestAuthentication"/>
+            <class name="system.purchasing.TestPurchasing"/>
+            <class name="system.contact.TestContact"/>
+            <class name="system.shopping_cart.TestShoppingCart"/>
+        </classes>
+    </test>
+
 </suite>

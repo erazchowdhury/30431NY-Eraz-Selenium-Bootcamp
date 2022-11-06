@@ -1,0 +1,87 @@
+1. Purchase an Item
+Click on item link
+Click "Add to cart" button
+Click "Proceed to checkout" button
+Click "Proceed to checkout" button
+Enter valid email address
+Enter valid password
+Click Sign In Button
+Click "Proceed to checkout" button
+Click "terms of service" checkbox
+Click "Pay by bank wire" button
+Click "I confirm my order" button
+
+2. Send message through Contact Us
+Click on Contact Us link
+Select a heading from Subject Heading dropdown
+Enter an email address
+Upload picture
+Type in a message
+Click Send Button
+
+3. Send a reset password email
+Navigate to URL
+Click on Sign In Button
+Click "Forgot your password?" link
+Input email address
+Click "Retrieve Password" button
+
+4.Sign into account and view order
+Click on Sign In Button
+Enter valid email
+Enter valid password
+Click Sign In Button
+Click Order History and Details
+Click on PDF button
+
+5. Sign into account with valid email and password
+Click on Sign In Button
+Enter valid email
+Enter valid password
+Click Sign In Button
+
+6. Search for item and purchase
+Enter search term into searchbar
+Click search button
+Select item to purchase
+Click "Add to cart" button
+Click "Proceed to checkout" button
+Click "Proceed to checkout" button
+Enter valid email address
+Enter valid password
+Click Sign In Button
+Click "Proceed to checkout" button
+Click "terms of service" checkbox
+Click "Pay by bank wire" button
+Click "I confirm my order" button
+
+7.Remove item from shopping cart
+Click on item link
+Add item to cart
+Click proceed to checkout button
+Click on delete button
+
+
+8. Sign in with valid email and invalid password
+Click on sign in button
+Enter valid email
+Enter invalid password
+Click Sign In Button
+
+9. Write a review
+Click sign in button
+Enter valid email
+Enter valid password
+Click Sign In button
+Click on item link
+Click on Write a review button
+Select quality rating
+Enter title
+Enter comment
+Click send button
+
+
+10. Subscribe to newsletter
+Enter email in newsletter field
+Click submit button
+
