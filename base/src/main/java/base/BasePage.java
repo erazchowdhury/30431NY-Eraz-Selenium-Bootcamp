@@ -213,6 +213,16 @@ public class BasePage {
         select.selectByValue(value);
     }
 
+    public void clickOnElementFromList(List<WebElement> elements, int index) {
+
+        try {
+            clickOnElement(elements.get(index));
+        } catch (IndexOutOfBoundsException e) {
+            clickOnElement(elements.get(elements.size() - 1));
+        }
+
+    }
+
     public boolean isElementVisible(WebElement element) {
         try {
             fluentWait.until(ExpectedConditions.visibilityOf(element));

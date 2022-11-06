@@ -37,4 +37,9 @@ public class DataProviders extends BasePage {
         return excel.readStringArrays("TestSearchAndPurchaseDP");
     }
 
+    @DataProvider (name = "testRemoveItems")
+    public Object[][] getDataTestRemoveItems() {
+        return excel.readStringArrays("TestRemoveItems");
+    }
+
 }

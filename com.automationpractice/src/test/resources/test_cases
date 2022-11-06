@@ -54,3 +54,34 @@ Click "Proceed to checkout" button
 Click "terms of service" checkbox
 Click "Pay by bank wire" button
 Click "I confirm my order" button
+
+7.Remove item from shopping cart
+Click on item link
+Add item to cart
+Close modal window
+Click on shopping cart button
+Click on delete button
+
+
+8. Sign in with valid email and invalid password
+Click on sign in button
+Enter valid email
+Enter invalid password
+
+9. Write a review
+Click sign in button
+Enter valid email
+Enter valid password
+Click Sign In button
+Click on item link
+Click on Write a review button
+Select quality rating
+Enter title
+Enter comment
+Click send button
+
+
+10. Subscribe to newsletter
+Enter email in newsletter field
+Click submit button
+
