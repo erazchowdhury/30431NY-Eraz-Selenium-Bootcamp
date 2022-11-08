@@ -1,11 +1,11 @@
 package application.page_library;
 
-import base.BasePage;
+import application.shared.SharedStepsUI;
 import org.openqa.selenium.support.PageFactory;
 
-public class HomePage extends BasePage {
+public class HomePage extends SharedStepsUI {
 
-    public HomePage() {
+    public HomePage(){
 
         PageFactory.initElements(driver, this);
 
