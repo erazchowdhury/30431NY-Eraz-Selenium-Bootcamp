@@ -25,10 +25,13 @@ import reporting.ExtentTestManager;
 import utils.Database;
 import utils.ExcelData;
 
+import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.lang.reflect.Method;
 import java.time.Duration;
 import java.util.*;
+import java.util.List;
 
 public class BasePage {
 
@@ -220,6 +223,14 @@ public class BasePage {
         } catch (IndexOutOfBoundsException e) {
             clickOnElement(elements.get(elements.size() - 1));
         }
+
+    }
+
+    public void pressEnter() throws AWTException {
+
+        Robot robot = new Robot();
+        robot.keyPress(KeyEvent.VK_ENTER);
+        robot.keyRelease(KeyEvent.VK_ENTER);
 
     }
 

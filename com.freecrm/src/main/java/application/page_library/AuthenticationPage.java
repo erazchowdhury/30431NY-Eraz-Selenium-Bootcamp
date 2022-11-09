@@ -16,8 +16,8 @@ public class AuthenticationPage extends BasePage {
     @FindBy (xpath = "//input[@name='password']")
     public WebElement passwordField;
 
-    @FindBy (xpath = "//*[text()='Login']")
-    public WebElement loginButton;
+    @FindBy (xpath = "//p[text()='Invalid login']")
+    public WebElement invalidLoginMessage;
 
     public AuthenticationPage(){
 
@@ -43,11 +43,15 @@ public class AuthenticationPage extends BasePage {
         inputEmail(email);
         inputPassword(password);
 
-        Robot robot = new Robot();
-        robot.keyPress(KeyEvent.VK_ENTER);
-        robot.keyRelease(KeyEvent.VK_ENTER);
+        pressEnter();
 
         return new HomePage();
+
+    }
+
+    public String getInvalidLoginMessage(){
+
+        return getTrimmedElementText(invalidLoginMessage);
 
     }
 

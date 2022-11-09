@@ -10,4 +10,9 @@ public class DataProviders extends BasePage {
         return excel.readStringArrays("TestLoginDP");
     }
 
+    @DataProvider (name = "testInvalidLogin")
+    public Object[][] getDataTestInvalidLogin() {
+        return excel.readStringArrays("TestInvalidLoginDP");
+    }
+
 }

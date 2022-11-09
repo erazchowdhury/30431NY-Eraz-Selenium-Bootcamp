@@ -1,5 +1,11 @@
-1. Log in with valid email and password
-Click Log In button
+1. Login with valid email and password
+Click Login button
 Enter valid email address
 Enter valid password
+Press enter key
+
+2.Login with valid email and invalid password
 Click Login button
+Enter valid email
+Enter invalid password
+Press enter key
