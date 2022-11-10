@@ -38,7 +38,7 @@ public class AuthenticationPage extends BasePage {
     }
 
 
-    public HomePage login(String email, String password) throws AWTException {
+    public HomePage login(String email, String password){
 
         inputEmail(email);
         inputPassword(password);

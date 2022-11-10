@@ -226,9 +226,14 @@ public class BasePage {
 
     }
 
-    public void pressEnter() throws AWTException {
+    public void pressEnter(){
 
-        Robot robot = new Robot();
+        Robot robot = null;
+        try {
+            robot = new Robot();
+        } catch (AWTException e) {
+            throw new RuntimeException(e);
+        }
         robot.keyPress(KeyEvent.VK_ENTER);
         robot.keyRelease(KeyEvent.VK_ENTER);
 

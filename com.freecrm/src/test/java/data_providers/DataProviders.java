@@ -15,4 +15,14 @@ public class DataProviders extends BasePage {
         return excel.readStringArrays("TestInvalidLoginDP");
     }
 
+    @DataProvider (name = "testCreatingEvent")
+    public Object[][] getDataTestCreatingEvent() {
+        return excel.readStringArrays("TestCreateEventDP");
+    }
+
+    @DataProvider (name = "testCreatingCompany")
+    public Object[][] getDataTestCreatingCompany() {
+        return excel.readStringArrays("TestCreatingCompanyDP");
+    }
+
 }
