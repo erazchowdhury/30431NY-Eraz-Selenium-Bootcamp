@@ -18,7 +18,12 @@
 
     <classes>
         <class name="system.authentication.TestAuthentication"/>
+        <class name="system.calls.TestCalls"/>
         <class name="system.companies.TestCompanies"/>
+        <class name="system.contacts.TestContacts"/>
+        <class name="system.deals.TestDeals"/>
+        <class name="system.events.TestEvents"/>
+        <class name="system.tasks.TestTasks"/>
     </classes>
     </test>
 

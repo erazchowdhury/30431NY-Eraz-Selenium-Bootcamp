@@ -17,12 +17,41 @@ public class DataProviders extends BasePage {
 
     @DataProvider (name = "testCreatingEvent")
     public Object[][] getDataTestCreatingEvent() {
-        return excel.readStringArrays("TestCreateEventDP");
+        return excel.readStringArrays("TestCreatingEventDP");
     }
 
     @DataProvider (name = "testCreatingCompany")
     public Object[][] getDataTestCreatingCompany() {
         return excel.readStringArrays("TestCreatingCompanyDP");
+    }
+
+    @DataProvider (name = "testCreatingContact")
+    public Object[][] getDataTestCreatingContact() {
+        return excel.readStringArrays("TestCreatingContactDP");
+    }
+
+    @DataProvider (name = "testCreatingDeal")
+    public Object[][] getDataTestCreatingDeal() {
+        return excel.readStringArrays("TestCreatingDealDP");
+    }
+
+    @DataProvider (name = "testCreatingTask")
+    public Object[][] getDataTestCreatingTask() {
+        return excel.readStringArrays("TestCreatingTaskDP");
+    }
+
+    @DataProvider (name = "testCreatingTaskWithInvalidCompletion")
+    public Object[][] getDataTestCreatingTaskWithInvalidCompletion() {
+        return excel.readStringArrays("TestCreateTaskInvalidCompDP");
+    }
+
+    @DataProvider (name = "testCreatingCall")
+    public Object[][] getDataTestCreatingCall() {
+        return excel.readStringArrays("TestCreatingCallDP");
+    }
+    @DataProvider (name = "testDeletingContact")
+    public Object[][] getDataTestDeletingContact() {
+        return excel.readStringArrays("TestDeletingContactDP");
     }
 
 }

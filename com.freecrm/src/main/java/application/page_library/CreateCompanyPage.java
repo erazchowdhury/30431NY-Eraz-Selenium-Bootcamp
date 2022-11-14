@@ -52,14 +52,17 @@ public class CreateCompanyPage extends SharedStepsUI {
     @FindBy (xpath = "//button[@class='ui linkedin button']")
     public WebElement saveButton;
 
+    @FindBy (xpath = "//form[@class='ui form segment custom-form-container']")
+    public WebElement createCompanyForm;
+
     public CreateCompanyPage() {
 
         PageFactory.initElements(driver,this);
 
     }
 
-    public ItemDetailsPage createCompany(String companyName, int userIndex, String streetAddress,
-                                         String city, String state, String zipcode, String phoneNumber, String description,
+    public ItemDetailsPage createCompany(String companyName, int userIndex, String streetAddress, String city,
+                                         String state, String zipcode, String phoneNumber, String description,
                                          int priorityIndex, String imagePath) {
 
         enterCompanyName(companyName);
@@ -75,6 +78,15 @@ public class CreateCompanyPage extends SharedStepsUI {
         clickPriorityDropdownButton();
         clickOnPriorityOption(priorityIndex);
         sendImage(imagePath);
+        clickSaveButton();
+
+        return new ItemDetailsPage();
+
+    }
+
+    public ItemDetailsPage createSimpleCompany(String companyName){
+
+        enterCompanyName(companyName);
         clickSaveButton();
 
         return new ItemDetailsPage();

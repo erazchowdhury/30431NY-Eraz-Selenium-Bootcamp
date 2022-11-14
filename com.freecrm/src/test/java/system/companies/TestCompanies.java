@@ -10,7 +10,7 @@ import java.awt.*;
 public class TestCompanies extends BasePage {
 
     @Test (groups = {"smoke", "companies"}, dataProviderClass = data_providers.DataProviders.class, dataProvider = "testCreatingCompany")
-    public void testCreateCompany(String email, String password, String companyName, String userIndex, String streetAddress,
+    public void testCreatingCompany(String email, String password, String companyName, String userIndex, String streetAddress,
                                   String city, String state, String zipcode, String phoneNumber, String description,
                                   String priorityIndex, String imagePath) {
 
@@ -27,7 +27,11 @@ public class TestCompanies extends BasePage {
         ItemDetailsPage itemDetailsPage = createCompanyPage.createCompany(companyName, Integer.parseInt(userIndex),
                 streetAddress, city, state, zipcode, phoneNumber, description, Integer.parseInt(priorityIndex), imagePath);
 
-        Assert.assertEquals(itemDetailsPage.getName(), companyName);
+        if(isElementInvisible(createCompanyPage.createCompanyForm)){
+
+            Assert.assertEquals(itemDetailsPage.getName(), companyName);
+
+        }
 
     }
 

@@ -248,6 +248,16 @@ public class BasePage {
         return true;
     }
 
+    public boolean isElementInvisible(WebElement element) {
+        try {
+            webDriverWait.until(ExpectedConditions.invisibilityOf(element));
+        } catch (TimeoutException e) {
+            return false;
+        }
+
+        return true;
+    }
+
     public boolean isFileDownloaded(String downloadPath, String fileName) {
         File dir = new File(downloadPath);
         File[] dirContents = dir.listFiles();

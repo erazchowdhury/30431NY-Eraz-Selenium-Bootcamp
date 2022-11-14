@@ -1,6 +1,6 @@
 package application.shared.ui;
 
-import application.page_library.CompaniesPage;
+import application.page_library.*;
 import base.BasePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -17,6 +17,18 @@ public class SystemBar extends BasePage {
     @FindBy (xpath = "//a[@href='/companies']")
     public WebElement companiesButton;
 
+    @FindBy (xpath = "//a[@href='/contacts']")
+    public WebElement contactsButton;
+
+    @FindBy (xpath = "//a[@href='/deals']")
+    public WebElement dealsButton;
+
+    @FindBy (xpath = "//a[@href='/tasks']")
+    public WebElement tasksButton;
+
+    @FindBy (xpath = "//a[@href='/calls']")
+    public WebElement callsButton;
+
     public SystemBar() {
         PageFactory.initElements(driver, this);
     }
@@ -27,9 +39,11 @@ public class SystemBar extends BasePage {
 
     }
 
-    public void clickCalendarButton(){
+    public EventsPage clickCalendarButton(){
 
         clickOnElement(calendarButton);
+
+        return new EventsPage();
 
     }
 
@@ -38,6 +52,38 @@ public class SystemBar extends BasePage {
         clickOnElement(companiesButton);
 
         return new CompaniesPage();
+
+    }
+
+    public ContactsPage clickContactsButton(){
+
+        clickOnElement(contactsButton);
+
+        return new ContactsPage();
+
+    }
+
+    public DealsPage clickDealsButton() {
+
+        clickOnElement(dealsButton);
+
+        return new DealsPage();
+
+    }
+
+    public TasksPage clickTasksButton() {
+
+        clickOnElement(tasksButton);
+
+        return new TasksPage();
+
+    }
+
+    public CallsPage clickCallsButton(){
+
+        clickOnElement(callsButton);
+
+        return new CallsPage();
 
     }
 
