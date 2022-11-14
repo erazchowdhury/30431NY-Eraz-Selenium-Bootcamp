@@ -25,10 +25,13 @@ import reporting.ExtentTestManager;
 import utils.Database;
 import utils.ExcelData;
 
+import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.lang.reflect.Method;
 import java.time.Duration;
 import java.util.*;
+import java.util.List;
 
 public class BasePage {
 
@@ -80,7 +83,7 @@ public class BasePage {
 
     @Parameters({"driverConfigEnabled", "browser", "url"})
     @BeforeMethod (alwaysRun = true)
-    public void driverSetup(@Optional("true") String driverConfigEnabled, @Optional("chrome") String browser, @Optional("http://automationpractice.com") String url) {
+    public void driverSetup(@Optional("true") String driverConfigEnabled, @Optional("chrome") String browser, @Optional("https://freecrm.com") String url) {
         if (Boolean.parseBoolean(driverConfigEnabled)) {
             driverInit(browser);
             driver.get(url);
@@ -223,12 +226,35 @@ public class BasePage {
 
     }
 
+    public void pressEnter(){
+
+        Robot robot = null;
+        try {
+            robot = new Robot();
+        } catch (AWTException e) {
+            throw new RuntimeException(e);
+        }
+        robot.keyPress(KeyEvent.VK_ENTER);
+        robot.keyRelease(KeyEvent.VK_ENTER);
+
+    }
+
     public boolean isElementVisible(WebElement element) {
         try {
             fluentWait.until(ExpectedConditions.visibilityOf(element));
         } catch (TimeoutException e) {
             return false;
         }
+        return true;
+    }
+
+    public boolean isElementInvisible(WebElement element) {
+        try {
+            webDriverWait.until(ExpectedConditions.invisibilityOf(element));
+        } catch (TimeoutException e) {
+            return false;
+        }
+
         return true;
     }
 

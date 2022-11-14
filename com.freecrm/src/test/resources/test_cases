@@ -1,0 +1,85 @@
+1. Login with valid email and password
+Click Login button
+Enter valid email address
+Enter valid password
+Press enter key
+
+2.Login with valid email and invalid password
+Click Login button
+Enter valid email
+Enter invalid password
+Press enter key
+
+3.Create an event
+Click Login button
+Enter valid email address
+Enter valid password
+Press enter key
+Click calendar button
+Click day
+Enter title
+
+4. Create contact
+Click Login button
+Enter valid email address
+Enter valid password
+Press enter key
+Click contacts button
+
+5. Create company
+Click Login button
+Enter valid email address
+Enter valid password
+Press enter key
+Click companies button
+
+6. Create deal
+Click Login button
+Enter valid email address
+Enter valid password
+Press enter key
+Click deals button
+
+7. Create task
+Click Login button
+Enter valid email address
+Enter valid password
+Press enter key
+Click tasks button
+Click create task button
+Input task name
+Input description
+Click save task button
+
+8.Create task with invalid completion percentage
+Click Login button
+Enter valid email address
+Enter valid password
+Press enter key
+Click tasks button
+Click create task button
+Input task name
+Input invalid completion percentage
+Click save task button
+
+
+9. Create call
+Click Login button
+Enter valid email address
+Enter valid password
+Press enter key
+Click calls button
+Click create call button
+Click call time field
+Select day
+Select time
+Click assigned to dropdown button
+Click option
+Click save call button
+
+10. Delete contact
+Click Login button
+Enter valid email address
+Enter valid password
+Press enter key
+Click contacts button
