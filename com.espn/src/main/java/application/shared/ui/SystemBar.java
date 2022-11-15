@@ -28,6 +28,9 @@ public class SystemBar extends BasePage {
     @FindBy (xpath = "//li[@class='display-user']/span")
     public WebElement welcomeMessage;
 
+    @FindBy (xpath = "//div[@ng-repeat]")
+    public WebElement invalidLogInMessage;
+
     public SystemBar() {
 
         PageFactory.initElements(driver, this);
@@ -84,6 +87,12 @@ public class SystemBar extends BasePage {
     public String getWelcomeMessage(){
 
          return getTrimmedElementText(welcomeMessage);
+
+    }
+
+    public String getLogInErrorMessage(){
+
+        return getTrimmedElementText(invalidLogInMessage);
 
     }
 

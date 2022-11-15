@@ -18,4 +18,14 @@ public class TestAuthentication extends BasePage {
 
     }
 
+    @Test(groups = {"smoke", "authentication"}, dataProviderClass = data_providers.DataProviders.class, dataProvider = "testInvalidLogin")
+    public void testInvalidLogIn(String email, String password, String expected) {
+
+        HomePage homePage = new HomePage();
+        homePage.systemBar.logIn(email, password);
+
+        Assert.assertEquals(homePage.systemBar.getLogInErrorMessage(), expected);
+
+    }
+
 }
