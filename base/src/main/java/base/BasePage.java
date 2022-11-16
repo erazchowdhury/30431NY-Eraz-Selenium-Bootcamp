@@ -83,7 +83,7 @@ public class BasePage {
 
     @Parameters({"driverConfigEnabled", "browser", "url"})
     @BeforeMethod (alwaysRun = true)
-    public void driverSetup(@Optional("true") String driverConfigEnabled, @Optional("chrome") String browser, @Optional("https://freecrm.com") String url) {
+    public void driverSetup(@Optional("true") String driverConfigEnabled, @Optional("chrome") String browser, @Optional("https://www.espn.com") String url) {
         if (Boolean.parseBoolean(driverConfigEnabled)) {
             driverInit(browser);
             driver.get(url);
@@ -222,6 +222,26 @@ public class BasePage {
             clickOnElement(elements.get(index));
         } catch (IndexOutOfBoundsException e) {
             clickOnElement(elements.get(elements.size() - 1));
+        }
+
+    }
+
+    public void jsClickOnElementFromList(List<WebElement> elements, int index) {
+
+        try {
+            jsClickOnElement(elements.get(index));
+        } catch (IndexOutOfBoundsException e) {
+            jsClickOnElement(elements.get(elements.size() - 1));
+        }
+
+    }
+
+    public void safeClickOnElementFromList(List<WebElement> elements, int index) {
+
+        try {
+            safeClickOnElement(elements.get(index));
+        } catch (IndexOutOfBoundsException e) {
+            safeClickOnElement(elements.get(elements.size() - 1));
         }
 
     }
