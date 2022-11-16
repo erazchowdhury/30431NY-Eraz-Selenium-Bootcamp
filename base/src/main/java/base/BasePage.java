@@ -226,6 +226,26 @@ public class BasePage {
 
     }
 
+    public void jsClickOnElementFromList(List<WebElement> elements, int index) {
+
+        try {
+            jsClickOnElement(elements.get(index));
+        } catch (IndexOutOfBoundsException e) {
+            jsClickOnElement(elements.get(elements.size() - 1));
+        }
+
+    }
+
+    public void safeClickOnElementFromList(List<WebElement> elements, int index) {
+
+        try {
+            safeClickOnElement(elements.get(index));
+        } catch (IndexOutOfBoundsException e) {
+            safeClickOnElement(elements.get(elements.size() - 1));
+        }
+
+    }
+
     public void pressEnter(){
 
         Robot robot = null;
