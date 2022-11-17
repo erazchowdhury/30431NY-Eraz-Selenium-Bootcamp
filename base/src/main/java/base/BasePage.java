@@ -83,7 +83,7 @@ public class BasePage {
 
     @Parameters({"driverConfigEnabled", "browser", "url"})
     @BeforeMethod (alwaysRun = true)
-    public void driverSetup(@Optional("true") String driverConfigEnabled, @Optional("chrome") String browser, @Optional("https://www.espn.com") String url) {
+    public void driverSetup(@Optional("true") String driverConfigEnabled, @Optional("chrome") String browser, @Optional("https://www.bankofamerica.com") String url) {
         if (Boolean.parseBoolean(driverConfigEnabled)) {
             driverInit(browser);
             driver.get(url);
@@ -350,6 +350,13 @@ public class BasePage {
         jsDriver.executeScript("arguments[0].setAttribute('" + attribute + "', '" + value + "')", driver.findElement(by));
 
         return driver.findElement(by);
+    }
+
+    public String getElementAttributeValue(String attribute, WebElement element){
+
+        webDriverWait.until(ExpectedConditions.visibilityOf(element));
+        return element.getAttribute(attribute);
+
     }
 
     // endregion

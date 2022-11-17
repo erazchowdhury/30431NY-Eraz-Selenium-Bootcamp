@@ -77,4 +77,21 @@ public class GenerateData {
         return new String[]{day, month, year};
     }
 
+    public static String getRandomAccountNum() {
+        // It will generate 6 digit random Number.
+        // from 0 to 999999
+        Random rnd = new Random();
+        int number = rnd.nextInt(999999);
+
+        // this will convert any number sequence into 6 character.
+        return String.format("%06d", number);
+    }
+
+    public static String getRandomSSNum() {
+        Random rnd = new Random();
+        int number = rnd.nextInt(999999999);
+
+        return String.format("%09d", number);
+    }
+
 }
