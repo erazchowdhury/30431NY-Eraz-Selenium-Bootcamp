@@ -17,6 +17,9 @@
         </groups>
         <classes>
             <class name="system.authentication.TestAuthentication"/>
+            <class name="system.life_plan.TestLifePlan"/>
+            <class name="system.mortgages.TestMortgages"/>
+            <class name="system.real_estate.TestRealEstate"/>
         </classes>
     </test>
 

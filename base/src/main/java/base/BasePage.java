@@ -352,6 +352,13 @@ public class BasePage {
         return driver.findElement(by);
     }
 
+    public String getElementAttributeValue(String attribute, WebElement element){
+
+        webDriverWait.until(ExpectedConditions.visibilityOf(element));
+        return element.getAttribute(attribute);
+
+    }
+
     // endregion
 
     // endregion

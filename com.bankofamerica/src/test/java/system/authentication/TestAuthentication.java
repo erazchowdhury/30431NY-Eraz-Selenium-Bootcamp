@@ -21,9 +21,7 @@ public class TestAuthentication extends BasePage {
         GenerateData faker = new GenerateData();
         String accountNum = faker.getRandomAccountNum();
         String ssn = faker.getRandomSSNum();
-        forgotIDPasswordPage.inputAccountNumber(accountNum);
-        forgotIDPasswordPage.inputSsn(ssn);
-        forgotIDPasswordPage.clickContinueButton();
+        forgotIDPasswordPage.inputCredentials(accountNum,ssn);
 
         Assert.assertEquals(forgotIDPasswordPage.getErrorMessage(), expected);
 

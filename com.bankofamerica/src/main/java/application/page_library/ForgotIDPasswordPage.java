@@ -43,6 +43,14 @@ public class ForgotIDPasswordPage extends BasePage {
 
     }
 
+    public void inputCredentials(String accountNumber, String ssn){
+
+        inputAccountNumber(accountNumber);
+        inputSsn(ssn);
+        clickContinueButton();
+
+    }
+
     public String getErrorMessage(){
 
         return getTrimmedElementText(errorMessage);
