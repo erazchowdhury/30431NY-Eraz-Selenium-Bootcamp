@@ -1,4 +1,4 @@
-package application.system;
+package application.page_library;
 
 import application.shared.SharedStepsUI;
 import org.openqa.selenium.WebElement;

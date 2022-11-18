@@ -1,6 +1,6 @@
 package system.authentication;
 
-import application.system.HomePage;
+import application.page_library.HomePage;
 import base.BasePage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
