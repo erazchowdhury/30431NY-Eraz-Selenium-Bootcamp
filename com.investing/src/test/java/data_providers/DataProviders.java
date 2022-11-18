@@ -10,4 +10,24 @@ public class DataProviders extends BasePage {
         return excel.readStringArrays("TestLoginDP");
     }
 
+    @DataProvider(name = "testInvalidLogin")
+    public Object[][] getDataTestInvalidLogin() {
+        return excel.readStringArrays("TestInvalidLoginDP");
+    }
+
+    @DataProvider(name = "testSearch")
+    public Object[][] getDataTestSearch() {
+        return excel.readStringArrays("TestSearchDP");
+    }
+
+    @DataProvider(name = "testViewEconomicCalendarItem")
+    public Object[][] getDataTestViewEconomicCalendarItem() {
+        return excel.readStringArrays("TestViewEconomicCalendarItemDP");
+    }
+
+    @DataProvider(name = "testViewArticle")
+    public Object[][] getDataTestViewArticle() {
+        return excel.readStringArrays("TestViewArticleDP");
+    }
+
 }

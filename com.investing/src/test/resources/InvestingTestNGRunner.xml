@@ -18,6 +18,9 @@
 
     <classes>
         <class name="system.authentication.TestAuthentication"/>
+        <class name="system.articles.TestArticles"/>
+        <class name="system.economic_calendar.TestEconomicCalendar"/>
+        <class name="system.search.TestSearch"/>
     </classes>
     </test>
 

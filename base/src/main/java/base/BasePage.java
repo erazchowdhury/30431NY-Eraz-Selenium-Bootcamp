@@ -333,6 +333,13 @@ public class BasePage {
         jsDriver.executeScript("arguments[0].click();", element);
     }
 
+    public void jsScroll(int numOfPixels) {
+
+        jsDriver = (JavascriptExecutor) (driver);
+        jsDriver.executeScript("window.scrollBy(0," + numOfPixels + ")", "");
+
+    }
+
     public void safeClickOnElement(WebElement element) {
         try {
             clickOnElement(element);
