@@ -83,7 +83,7 @@ public class BasePage {
 
     @Parameters({"driverConfigEnabled", "browser", "url"})
     @BeforeMethod (alwaysRun = true)
-    public void driverSetup(@Optional("true") String driverConfigEnabled, @Optional("chrome") String browser, @Optional("https://www.bankofamerica.com") String url) {
+    public void driverSetup(@Optional("true") String driverConfigEnabled, @Optional("chrome") String browser, @Optional("https://www.investing.com") String url) {
         if (Boolean.parseBoolean(driverConfigEnabled)) {
             driverInit(browser);
             driver.get(url);
@@ -331,6 +331,13 @@ public class BasePage {
     public void jsClickOnElement(WebElement element) {
         jsDriver = (JavascriptExecutor) (driver);
         jsDriver.executeScript("arguments[0].click();", element);
+    }
+
+    public void jsScroll(int numOfPixels) {
+
+        jsDriver = (JavascriptExecutor) (driver);
+        jsDriver.executeScript("window.scrollBy(0," + numOfPixels + ")", "");
+
     }
 
     public void safeClickOnElement(WebElement element) {
