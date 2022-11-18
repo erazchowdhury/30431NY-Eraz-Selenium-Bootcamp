@@ -9,4 +9,17 @@
     <parameter name="browser" value="chrome"/>
     <parameter name="url" value="http://expedia.com"/>
 
+<!--    <test name="Smoke">-->
+<!--    <groups>-->
+<!--        <run>-->
+<!--            <include name="smoke"/>-->
+<!--        </run>-->
+<!--    </groups>-->
+
+<!--    <classes>-->
+<!--        <class name="system.authentication.TestAuthentication"/>-->
+
+<!--    </classes>-->
+<!--    </test>-->
+
 </suite>
