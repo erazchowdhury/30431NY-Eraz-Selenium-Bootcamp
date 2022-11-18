@@ -9,4 +9,18 @@
     <parameter name="browser" value="chrome"/>
     <parameter name="url" value="http://booking.com"/>
 
+    <test name="Smoke">
+        <groups>
+            <run>
+                <include name="smoke"/>
+            </run>
+        </groups>
+        <classes>
+<!--            <class name="system.authentication.TestAuthentication"/>-->
+<!--            <class name="system.games.TestGames"/>-->
+<!--            <class name="system.favorites.TestFavorites"/>-->
+<!--            <class name="system.articles.TestArticles"/>-->
+        </classes>
+    </test>
+
 </suite>
