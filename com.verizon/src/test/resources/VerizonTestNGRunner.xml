@@ -18,6 +18,7 @@
 
         <classes>
             <class name="system.search.TestSearch"/>
+            <class name="system.navigation.TestNavigation"/>
         </classes>
     </test>
 

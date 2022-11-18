@@ -5,14 +5,20 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class HomePage extends SharedStepsUI {
+public class FiveGPage extends SharedStepsUI {
 
-    @FindBy (xpath = "//h2[contains(text(),'Our latest')]")
-    public WebElement latestHeader;
+    @FindBy (xpath = "//h1")
+    public WebElement header;
 
-    public HomePage() {
+    public FiveGPage() {
 
         PageFactory.initElements(driver,this);
+
+    }
+
+    public String getHeaderText(){
+
+        return getTrimmedElementText(header);
 
     }
 
