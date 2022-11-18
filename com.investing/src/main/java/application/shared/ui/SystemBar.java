@@ -1,6 +1,6 @@
 package application.shared.ui;
 
-import application.system.ItemDetailsPage;
+import application.page_library.ItemDetailsPage;
 import base.BasePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

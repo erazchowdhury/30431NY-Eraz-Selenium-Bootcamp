@@ -1,7 +1,7 @@
 package system.economic_calendar;
 
-import application.system.HomePage;
-import application.system.ItemDetailsPage;
+import application.page_library.HomePage;
+import application.page_library.ItemDetailsPage;
 import base.BasePage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
