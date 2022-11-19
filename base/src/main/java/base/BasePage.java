@@ -83,7 +83,7 @@ public class BasePage {
 
     @Parameters({"driverConfigEnabled", "browser", "url"})
     @BeforeMethod (alwaysRun = true)
-    public void driverSetup(@Optional("true") String driverConfigEnabled, @Optional("chrome") String browser, @Optional("http://mbusa.com") String url) {
+    public void driverSetup(@Optional("true") String driverConfigEnabled, @Optional("chrome") String browser, @Optional("https://www.apartments.com") String url) {
         if (Boolean.parseBoolean(driverConfigEnabled)) {
             driverInit(browser);
             driver.get(url);
@@ -297,6 +297,7 @@ public class BasePage {
     }
 
     public void switchToFrameByElement(WebElement frame) {
+        webDriverWait.until(ExpectedConditions.visibilityOf(frame));
         driver.switchTo().frame(frame);
     }
 

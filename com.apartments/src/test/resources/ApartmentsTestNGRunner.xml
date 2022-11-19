@@ -9,4 +9,17 @@
     <parameter name="browser" value="chrome"/>
     <parameter name="url" value="https://www.apartments.com"/>
 
+    <test name="Smoke">
+        <groups>
+            <run>
+                <include name="smoke"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="system.listings.TestListings"/>
+            <class name="system.navigation.TestNavigation"/>
+        </classes>
+    </test>
+
 </suite>
