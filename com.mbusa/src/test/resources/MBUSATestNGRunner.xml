@@ -9,7 +9,18 @@
     <parameter name="browser" value="chrome"/>
     <parameter name="url" value="http://mbusa.com"/>
 
-    <test name="test">
+    <test name="Smoke">
+        <groups>
+            <run>
+                <include name="smoke"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="system.search.TestSearch"/>
+            <class name="system.navigation.TestNavigation"/>
+            <class name="system.vehicles.TestVehicles"/>
+        </classes>
     </test>
 
 
