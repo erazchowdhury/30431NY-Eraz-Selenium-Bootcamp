@@ -9,4 +9,16 @@
     <parameter name="browser" value="chrome"/>
     <parameter name="url" value="http://bmwusa.com"/>
 
+        <test name="Smoke">
+            <groups>
+                <run>
+                    <include name="smoke"/>
+                </run>
+            </groups>
+            <classes>
+                <class name="system.models.TestModels"/>
+                <class name="system.navigation.TestNavigation"/>
+            </classes>
+        </test>
+
 </suite>
