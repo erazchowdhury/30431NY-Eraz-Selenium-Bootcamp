@@ -44,7 +44,7 @@ public class SystemBar extends BasePage {
     public ManageRentalsPage navigateToManagePage(){
 
         clickMenuButton();
-        clickManageRentalsButton();
+        safeClickOnElement(manageRentalsButton);
 
         return new ManageRentalsPage();
 

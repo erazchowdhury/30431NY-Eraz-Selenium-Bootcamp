@@ -2,14 +2,17 @@ package application.shared.ui;
 
 import application.page_library.*;
 import base.BasePage;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class SystemBar extends BasePage {
 
     @FindBy (xpath = "//span[@class='user-display']")
     public WebElement userDisplay;
+
 
     @FindBy (xpath = "//a[@href='/calendar']")
     public WebElement calendarButton;
@@ -28,6 +31,9 @@ public class SystemBar extends BasePage {
 
     @FindBy (xpath = "//a[@href='/calls']")
     public WebElement callsButton;
+
+    @FindBy (xpath = "//a[@href='/cases']")
+    public WebElement casesButton;
 
     public SystemBar() {
         PageFactory.initElements(driver, this);
@@ -84,6 +90,14 @@ public class SystemBar extends BasePage {
         clickOnElement(callsButton);
 
         return new CallsPage();
+
+    }
+
+    public CasesPage clicksCasesButton(){
+
+        clickOnElement(casesButton);
+
+        return new CasesPage();
 
     }
 

@@ -54,4 +54,8 @@ public class DataProviders extends BasePage {
         return excel.readStringArrays("TestDeletingContactDP");
     }
 
+    @DataProvider (name = "testCreatingCase")
+    public Object[][] getDataTestCreatingCase() {
+        return excel.readStringArrays("TestCreatingCaseDP");
+    }
 }
